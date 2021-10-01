@@ -3,6 +3,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { Provider, defaultTheme } from '@adobe/react-spectrum';
+import './styles/index.css';
 
 //  Component Imports
 import App from './App';
@@ -13,7 +15,9 @@ const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <App />
+      <Provider theme={defaultTheme}>
+        <App />
+      </Provider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </React.StrictMode>,

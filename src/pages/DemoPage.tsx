@@ -1,3 +1,4 @@
+import { View } from '@react-spectrum/view';
 import { useQuery } from 'react-query';
 import { getProductList } from '../api/demoApi';
 import { productStore } from '../store/demoStore';
@@ -22,8 +23,8 @@ const DemoPage = () => {
   if (isError) return <div>Something went wrong....</div>;
 
   return (
-    <div style={{ width: '400px', margin: '0 auto' }}>
-      <h1>Shop Page</h1>
+    <View padding='size-400'>
+      <h1 style={{ color: 'var(--dubber-blue)' }}>Shop Page</h1>
 
       {productList?.map((item) => (
         <div
@@ -32,6 +33,7 @@ const DemoPage = () => {
             border: '1px solid black',
             marginBottom: '10px',
             padding: '10px',
+            width: '400px',
           }}
         >
           <img width='60px' src={item.image} alt={item.title} />
@@ -42,7 +44,7 @@ const DemoPage = () => {
           </div>
         </div>
       ))}
-    </div>
+    </View>
   );
 };
 
