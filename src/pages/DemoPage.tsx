@@ -12,7 +12,7 @@ export interface ProductType {
   title: string;
 }
 
-const Shop = () => {
+const DemoPage = () => {
   const { isLoading, isError, data } = useQuery('products', getProductList);
   const setProducts = productStore((state) => state.setProducts);
   const productList = productStore((state) => state.products);
@@ -46,4 +46,4 @@ const Shop = () => {
   );
 };
 
-export default Shop;
+export default DemoPage;
