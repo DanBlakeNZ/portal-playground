@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "react-app",
+    "@babel/preset-env",
+    ["@babel/preset-react", { "runtime": "automatic" }],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    // ↓↓ must be defined last ↓↓
+    "@compiled/babel-plugin"
+  ]
+}
